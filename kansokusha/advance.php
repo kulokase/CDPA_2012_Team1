@@ -63,6 +63,7 @@
 			writeTo($_POST['name'],$_POST['content']);
 		}
 		readFrom();
+
 	?>
 	</body>
 </html>
