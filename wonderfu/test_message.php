@@ -43,7 +43,7 @@
 		{
 			$fp=fopen("mes_data.txt","a+");
 			if($fp!=NULL)
-				fwrite($fp,$_POST['fname']."  於(".date("Y/m/d - H:i:s").") "." 說： <br/>".$_POST['mes']."<br/>");
+				fwrite($fp,$_POST['fname']."  於(".date("Y/m/d - H:i:s").") "." 說： <br/>".$_POST['mes']."<br/>"."<hr/>");
 			else
 				echo "FAILED TO OPEN FILE .";	
 			fclose($fp);
@@ -54,12 +54,7 @@
 			$fp=fopen("mes_data.txt","r+");
 			if($fp!=NULL)
 				while(!feof($fp))
-				{
 					echo fgets($fp) ;
-					?>
-					<hr/>
-					<?php
-				}
 			else
 				echo "FAILED TO OPEN FILE .";
 			fclose($fp);
