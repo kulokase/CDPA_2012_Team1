@@ -41,16 +41,30 @@
 	<?php
 		function writetofile()
 		{
+			require("mysql.php");
+			$sql = "INSERT INTO `team1GuestDB`.`GuestBook` (`id`, `name`, `msg`, `timestamp`) VALUES (NULL, :name , :msg , CURRENT_TIMESTAMP);";
+			$stm = $dbh->prepare($sql);
+			$stm->execute(array(':name' => $_POST['fname'] , ':msg' => $_POST['mes']));	
+/*
 			$fp=fopen("mes_data.txt","a+");
 			if($fp!=NULL)
-				fwrite($fp,$_POST['fname']."  於(".date("Y/m/d - H:i:s").") "." 說： <br/>".$_POST['mes']."<br/>"."<hr/>");
+				fwrite($fp,$_POST['fname']."  於(".date("Y/m/d - H:i:s").") "." 說： <br/>".$_POST['mes']."<br/><hr/>");
 			else
 				echo "FAILED TO OPEN FILE .";	
 			fclose($fp);
+*/
 		}
 			
 		function readfromfile()
 		{
+			require("mysql.php");
+		        $sql = "SELECT * FROM  `GuestBook` ";
+
+      			$sth = $dbh->query($sql);
+			$result = $sth->fetchALL();
+			foreach($result as $tmp)
+				echo htmlspecialchars($tmp['name'])."  於(".$tmp['timestamp'].")  說：<br/>".htmlspecialchars($tmp['msg'])."<br/>"."<hr/>";
+/*
 			$fp=fopen("mes_data.txt","r+");
 			if($fp!=NULL)
 				while(!feof($fp))
@@ -58,6 +72,7 @@
 			else
 				echo "FAILED TO OPEN FILE .";
 			fclose($fp);
+*/	
 		}
 		
 		if(isset($_POST['fname']) && $_POST['mes'])
