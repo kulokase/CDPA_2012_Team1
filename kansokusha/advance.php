@@ -30,25 +30,40 @@
 		</form>
 	<?php
 		function writeTo($name,$content){
-			$file = fopen("dailogue.txt","a+") or exit("aaaaaaUnable to open file!");
+			require("mysql.php");
+			$sql = "INSERT INTO  `team1GuestDB`.`GuestBook` (`id` ,`name` ,`msg` ,`timestamp`)
+				VALUES (NULL , :name , :msg , CURRENT_TIMESTAMP)";
+			$stm = $dbh->prepare($sql);
+			$stm->execute(array(':name' => $name,':msg' => $content));
+			/*$file = fopen("dailogue.txt","a+") or exit("aaaaaaUnable to open file!");
 			fwrite($file,$name . " (" . date("Y/m/d - H:i:s")  . ") " . "said:<br/>");
 			fwrite($file,$content . "<br/>");
 			fclose($file);
+			*/
 		}
 	
 		function readFrom(){
-			$file = fopen("dailogue.txt","r") or exit("Unable to open file!");
+		        require("mysql.php");
+		        $sql = "SELECT * FROM  `GuestBook`";
+		        $sth = $dbh->query($sql);
+			$result = $sth->fetchAll();
+		        foreach($result as $tmp){
+				echo $tmp['name'] . " says: <br/>"  . $tmp['msg'] . '<br/>';
+			}
+			//print_r($sth->fetchAll());
+			/*$file = fopen("dailogue.txt","r") or exit("Unable to open file!");
 			while(!feof($file)){
 				echo "<p>" . fgets($file) . "<p>" . "<br/>";
 				echo "<p>" . "    "  . fgets($file) . "<p>" . "<br/>";
 			}
-			fclose($file);
+			fclose($file);*/
 		}
 
 		if(isset($_POST['name'])){
 			writeTo($_POST['name'],$_POST['content']);
-			readFrom();
 		}
+		readFrom();
+
 	?>
 	</body>
 </html>
