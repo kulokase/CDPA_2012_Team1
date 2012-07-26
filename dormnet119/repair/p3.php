@@ -1,4 +1,4 @@
-<html>
+<html>http://140.117.202.135/~end724/CDPA_2012_Team1/dormnet119/repair/p2.php
 	<head>
 		<script type="text/javascript">
 		function suc() {
@@ -26,7 +26,7 @@
   				<option value="G">翠亨G棟</option>
   				<option value="H">翠亨H棟</option>
   				<option value="L">翠亨L棟</option>
-  				</select><input type="type" name="r">室  
+  				</select><input type="text	" name="r">室  
 				<select name="b">
   				<option value="" selected="selected">&lt;--請選擇--&gt;</option>
  				<option value="1">1</option>
@@ -34,7 +34,7 @@
   				<option value="3">3</option>
   				<option value="4">4</option>
   				</select>床<br/>
-			維修時段:<select name="w">
+			維修時段:<select name="w">i
   					<option value="" selected="selected">&lt;--請選擇--&gt;</option>
  					<option value="1">星期一</option>
   					<option value="2">星期二</option>
@@ -56,7 +56,4 @@
 	<body >
 	</body>
 </html>
-<?php
-	$q1=$_POST["q1"];
-	$q2=$_POST["q2"];
 
