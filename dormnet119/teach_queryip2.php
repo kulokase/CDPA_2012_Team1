@@ -36,9 +36,10 @@
 		<thead>
 		<tr>
 			<th>寢室床位</th>
-			<th>IP Address</th>
-			<th>Subnet Mask</th>
-			<th class="lastcol">Default Gateway</th>
+			<th>IP位置</th>
+			<th>子網路遮罩</th>
+			<th>慣用閘道</th>
+			<th class="lastcol">慣用DNS伺服器</th>
 		</tr>
 		</thead>
 		<tbody>
@@ -64,11 +65,17 @@
 				$stm = $dbh->prepare($sql);
 				$stm->execute(array(':id' => $id, ':room' => $room, ':bed' => $bed));
 				$result = $stm->fetchAll();
-				foreach($result as $tmp){
-					echo '<td>' . $tmp['bed'] . '</td>' .
-					     '<td>' . $tmp['ip'] . '</td>' .
-					     '<td>' . $tmp['subnetmask'] . '</td>' .
-					     '<td class="lastcol">' . $tmp['gateway'] . '</td>';
+				if(empty($result)){
+					echo '<td>' . "不存在此床位" . '</td>';
+				}
+				else{
+					foreach($result as $tmp){
+						echo '<td>' . $tmp['bed'] . '</td>' .
+						     '<td>' . $tmp['ip'] . '</td>' .
+						     '<td>' . $tmp['subnetmask'] . '</td>' .
+						     '<td>' . $tmp['gateway'] . '</td>';
+						     '<td class="lastcol">' . '140.117.11.1' . '</td>';
+					}
 				}
 			?>
 		</tr>
