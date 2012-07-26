@@ -107,28 +107,67 @@
 <hr>
 
 
-<h3>案件處理歷程</h3>
+<div style="color:; background:; filter : alpha(opacity=50); opacity : 0.5;">
 
-"網管的留言"
+<h3>網管人員留言</h3>
 
+<?php
+/*
+function read(){
 
-2012-07-26 01:16:59
-網管 - 莊鈺婷：
-回覆測試!
+        require ("mysql.php");
+        $sql = "SELECT * FROM  `interactions` ";
+        $sth = $dbh->query($sql);
+        $result = $sth->fetchAll();
+        foreach($result as $tmp){
+                echo htmlspecialchars($tmp['id']).'<br />';
+                echo htmlspecialchars($tmp['timestamp'])."<br />";
+                echo htmlspecialchars($tmp['manager'])."<br />";
+                echo htmlspecialchars($tmp['log'])."<br />";
+        }
 
+}
+
+read ();
+*/
+echo " Hello World";
+                /* This is a comment */
+?>
+
+</div>
 
 
 <hr>
 
 
+<div style="color:; background:; filter : alpha(opacity=50); opacity : 0.5;">
+
 <h3>報修者留言</h3>
 
-"報修者的留言"
+<?php
+/*
+function read(){
 
+        require ("mysql.php");
+        $sql = "SELECT * FROM  `process_log` ";
+        $sth = $dbh->query($sql);
+        $result = $sth->fetchAll();
+        foreach($result as $tmp){
+                echo htmlspecialchars($tmp['id']).'<br />';
+                echo htmlspecialchars($tmp['timestamp'])."<br />";
+                echo htmlspecialchars($tmp['manager'])."<br />";
+                echo htmlspecialchars($tmp['log'])."<br />";
+        }
 
-2012-07-26 01:16:59
-報修者 - 莊鈺婷：
-謝謝你!!
+}
+
+read ();
+*/
+echo " Hello World";
+                /* This is a comment */
+?>
+
+</div>
 
 
 <hr>
@@ -160,34 +199,9 @@
 
 </div>
 
-
-<?php
-
-function read(){
-
-        require ("mysql.php");
-        $sql = "SELECT * FROM  `GuestBook` ";
-        $sth = $dbh->query($sql);
-        $result = $sth->fetchAll();
-        foreach($result as $tmp){
-                echo htmlspecialchars($tmp['name']).'<br />';
-                echo htmlspecialchars($tmp['msg'])."<br />";
-        }
-
-}
-
-read ();
-
-echo " Hello World";
-                /* This is a comment */
-?>
-
-
-
-
-
-
-
+<!--
+INSERT INTO `team1GuestDB`.`process_log` (`id`, `timestamp`, `manager`, `log`) VALUES ('247', '2012-07-16', 'Pichu', 'AAA');
+-->
 
 
 </body>
