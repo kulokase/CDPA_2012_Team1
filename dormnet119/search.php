@@ -1,55 +1,58 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-	<meta charset="utf8">
-	<title>查詢維修進度</title>
-</head>
-<body>
+	<head>
+		<meta charset="utf8">
+		<title>查詢維修進度</title>
+	</head>
+	<body>
 
 
 
-<script type="text/javascript" src="jquery-1.6.2.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-//$("div#information").hide();
-});
-</script>
-
-
-
-<div style="color:; background:; filter : alpha(opacity=50); opacity : 0.5;">
-
-<p align=center>
-
-<h3>維修進度查詢</h3>
-
-	<form method="post">
-        	<table>
-	                <tr>
-                        	<td><label>報修編號:</label></td>
-                	        <td colspan="2"><input type="text" name="bugid" /><br /></td>
-                	</tr>
-        	        <tr>
-	                        <td><label>報修密碼:</label></td>
-                        	<td colspan="2"><input type="password" name="regpass" /><br /></td>
-                	</tr>
-        	        <tfoot>
-	                        <tr>
-					<td colspan="3"><input type="button" value="忘記編號&密碼"/>
-                                	<input type="submit" value="開始查詢"/>
-                        	        <input type="reset" value="重新輸入" /></td>
-                	        </tr>
-        	        </tfoot>
-	        </table>
-
+	<script type="text/javascript" src="jquery-1.6.2.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+			//$("div#information").hide();
+				});
+	</script>
+	
+	
+	
+	<div style="color:; background:; filter : alpha(opacity=50); opacity : 0.5;">
+	
+	<p align=center>
+	
+		<h3>維修進度查詢</h3>
+	
+		<form method="post">
+			<table>
+				<tbody>
+					<tr>
+						<td><label>報修編號:</label></td>
+						<td colspan="2"><input type="text" name="bugid" /><br /></td>
+					</tr>
+					<tr>
+						<td><label>報修密碼:</label></td>
+						<td colspan="2"><input type="password" name="regpass" /><br /></td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="3">
+							<input type="button" value="忘記編號&密碼"/>
+							<input type="submit" value="開始查詢"/>
+							<input type="reset" value="重新輸入" />
+						</td>
+					</tr>
+				</tfoot>
+			</table>
+		
+		</form>
 	</p>
-</form>
-
-</div>
-
-
-<?php
+	</div>
+	
+	
+	<?php
 
 require ("mysql.php");
 if (!empty($_POST['bugid']) or !empty($_POST['regpass'])) {
@@ -61,28 +64,28 @@ if (!empty($_POST['bugid']) or !empty($_POST['regpass'])) {
 	$stm = $dbh->prepare($sql);
 	$stm->execute(array(':user' => $user , ':pass'=>$pass));
 	$res = $stm->fetch();
-?>
+	?>
 
 
 
 
-<?php
-	if ($res) {
-		echo "congratulation!!";
-		
-
-?>
+		<?php
+		if ($res) {
+			echo "congratulation!!";
 
 
+			?>
 
 
-<?php
-		
-	}
 
-	else {
-		echo "Invalid login information.";
-	}
+
+				<?php
+
+		}
+
+		else {
+			echo "Invalid login information.";
+		}
 } 
 
 else {
@@ -92,17 +95,17 @@ else {
 
 
 <script type="text/javascript">
-        //XXXDDD
-                $(document).ready(function(){
+//XXXDDD
+$(document).ready(function(){
 
-<?php if($res){ ?>
-                $("div#information").show();
-<?php }else{ ?>
-                $("div#information").hide();
-<?php } ?>
+		<?php if($res){ ?>
+		$("div#information").show();
+		<?php }else{ ?>
+		$("div#information").hide();
+		<?php } ?>
 
-                alert();
-                });
+		alert();
+		});
 </script>
 
 
@@ -112,8 +115,8 @@ else {
 <script type="text/javascript" src="jquery-1.6.2.min.js"></script>
 <script type="text/javascript"> 
 $(document).ready(function(){
-$("div#information").hide(); 
-});
+		$("div#information").hide(); 
+		});
 </script>
 -->
 
@@ -125,8 +128,8 @@ $("div#information").hide();
 
 function read_status(){
 
-        require ("mysql.php");
-        $sql = "SELECT * FROM  `bug` LIMIT 0 , 30 ";
+	require ("mysql.php");
+	$sql = "SELECT * FROM  `bug` LIMIT 0 , 30 ";
         $sth = $dbh->query($sql);
         $result = $sth->fetchAll();
 /*
