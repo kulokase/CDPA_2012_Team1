@@ -1,4 +1,4 @@
-<html>
+<htmarset = "utf8">
 <head><meta charset = "utf8">
       <title> 報修單 </title>
 </head>
