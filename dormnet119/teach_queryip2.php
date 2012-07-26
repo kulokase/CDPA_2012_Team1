@@ -72,8 +72,81 @@
 				}
 			?>
 		</tr>
+		
+
 		</tbody>
 		</table>
-	</body>
+	<h3 class="formnote">IP設定方式</h3>
+	<ul>
+	<li>Windows XP-IP設定步驟
+		<ul>
+			<li>開始 > 設定 > 網路連線 </li>
+			<li><img alt="Windows XP-IP設定步驟圖片1" title="Windows XP-IP設定步驟圖片1"
+				 src="IMG/teach/XP_config1.jpg" />
+			</li>
+			<li>在開啟的視窗中，尋找您正要設定的連線(通常為區域連線) > 右鍵 > 內容</li>
+			<li><img alt="Windows XP-IP設定步驟圖片2" title="Windows XP-IP設定步驟圖片2" 
+				 src="IMG/teach/XP_config2.jpg" />
+			</li>
+			<li>找出「Internet Protocol(TCP/IP)」 > 點選 "內容"</li>
+			<li><img alt="Windows XP-IP設定步驟圖片3" title="Windows XP-IP設定步驟圖片3" 
+				 src="IMG/teach/XP_config3.jpg" />
+			</li>
+			<li>在開啟的視窗中，鍵入上面的ip設定資訊。並依圖打上建議的「DNS伺服器」</li>
+			<li><img alt="Windows XP-IP設定步驟圖片4" title="Windows XP-IP設定步驟圖片4" 
+				 src="IMG/teach/XP_config4.jpg" />
+			</li>
+		</ul>
+	</li>
+</ul>
+
+
+
+
+
+
+
+	<li>Windows 7-IP設定步驟
+        	<ul>
+  			<li>開始 > 控制台</li>
+			<br/>
+  			<li><img alt="Windows 7-IP設定步驟圖片1" title="Windows XP-IP設定步驟圖片1"
+		 		 src="IMG/teach/win7_config1.jpg" />
+ 			</li>
+			<li>點選"檢視網路狀態及工作"</li>
+			<br/>
+			<li><img alt="Windows 7-IP設定步驟圖片2" title="Windows XP-IP設定步驟圖片2" 
+		 		 src="IMG/teach/win7_config2.jpg" />
+			</li>
+			<li>點選"變更介面卡設定"</li>
+			<br/>
+			<li><img alt="Windows 7-IP設定步驟圖片3" title="Windows XP-IP設定步驟圖片3"
+		 	 	 src="IMG/teach/win7_config3.jpg" />
+			</li>
+			<li>在區域連線點選右鍵</li>
+			<br/>
+			<li><img alt="Windows XP-IP設定步驟圖片4" title="Windows XP-IP設定步驟圖片4"
+		 	 	 src="IMG/teach/win7_config4.jpg" />
+			</li>
+			<li>點選內容</li>
+                        <br/>
+                        <li><img alt="Windows XP-IP設定步驟圖片4" title="Windows XP-IP設定步驟圖片4"
+                                 src="IMG/teach/win7_config5.jpg" />
+                        </li>
+			<li>點選"網際網路通訊協定第4版"(TCP/IPv4) > 接著點內容</li>
+                        <br/>
+                        <li><img alt="Windows XP-IP設定步驟圖片4" title="Windows XP-IP設定步驟圖片4"
+                                 src="IMG/teach/win7_config6.jpg" />
+                        </li>
+			<li></li>
+                        <br/>
+                        <li><img alt="Windows XP-IP設定步驟圖片4" title="Windows XP-IP設定步驟圖片4"
+                                 src="IMG/teach/win7_config7.jpg" />
+                        </li>
+
+		</ul>
+	</li>
+</ul>
+</body>
 
 </html>
