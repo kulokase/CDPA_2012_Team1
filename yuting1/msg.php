@@ -1,14 +1,15 @@
 <html>
 	<head>
-		<title>Hello Kitty = =|||</title>
+		<title>COOL</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<head>
-<body style="color:#211FBD; background:
-      url(http://2.bp.blogspot.com/-DgiZNFbLiwI/TyxFgDp_yZI/AAAAAAAAGvY/RtPboSG7pus/s1600/hello-kitty-face-wallpaper.gif)no-repeat fixed center;
+<body style="color:white; background:black
+      url(http://dl.zhishi.sina.com.cn/upload/43/96/92/1241439692.7850325.gif)no-repeat fixed center;
 filter:Alpha(Opacity=80,
                  FinishOpacity=80, Style=2);">
 
-<div style="color:#211FBD; background:#ffccff;filter : alpha(opacity=50); opacity : 0.5;">
-<form method="post">
+<div style="color:; background:; filter : alpha(opacity=50); opacity : 0.5;">
+<form method="post"><p align=center>
 	<table>
 		<tr>
 			<td><label>Name:</label></td>
@@ -26,29 +27,65 @@ filter:Alpha(Opacity=80,
 		</tfoot>
 	</table>
 
-</form>
+</p></form>
 
 </div>
 
-<div style="color:#89174F; background:#ffccff;filter : alpha(opacity=50); opacity : 0.5;">
+<div style="color:snow; background:;filter : alpha(opacity=50); opacity : 0.5;">
 
 <?php
 
-$name = $_POST['name'];
-$content = $_POST['content'];
 
-$handle = fopen("msg.txt", "a+");
+
+//$name = $_POST['name'];
+//$content = $_POST['content'];
+
+function fun_write($name, $content){
+
+        require("mysql.php");
+
+        $sql = "INSERT INTO `team1GuestDB`.`GuestBook` (`id`, `name`, `msg`, `timestamp`) 
+		VALUES (NULL, :name, :msg, CURRENT_TIMESTAMP);";
+
+        $stm = $dbh->prepare($sql);
+        $stm->execute(array(':name' => $name, ':msg' => $content));
+}
+
+
+function fun_read(){
+
+        require("mysql.php");
+
+        $sql = "SELECT * FROM  `GuestBook` ";
+
+        $sth = $dbh->query($sql);
+        $result = $sth->fetchALL();
+        foreach($result as $tmp){
+                echo '<p align=center>' . htmlspecialchars($tmp['id']).'<br/>';
+                echo htmlspecialchars($tmp['name']) . '<br/>';
+                echo htmlspecialchars($tmp['msg']) . '<br/>';
+                echo htmlspecialchars($tmp['timestamp']) . '<br/>';
+                echo '<hr/>'.'</p>';;
+        }
+}
+
+fun_write($_POST['name'], $_POST['content']);
+fun_read();
+
+
+/*$handle = fopen("msg.txt", "a+");
 fwrite($handle, "Name: $name	" . '<br/>' . "Content: $content" . '<br/>' . "----------------------------------------" . '<br/>'); 
 fclose($handle);
 $handle = fopen("msg.txt", "r");
 
 $txt = fread($handle, filesize("msg.txt"));
 fclose($handle);
+*/
 
 //echo '<br/>'.$_POST['name'];
 //echo '<br/>'.$_POST['content'];
 
-echo $txt . "<br/>";
+//echo $txt . "<br/>";
 
 ?>
 
