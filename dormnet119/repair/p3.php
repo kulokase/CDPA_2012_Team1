@@ -50,11 +50,10 @@
   					<option value="4">22:00~23:00</option>
 				</select><br/>
 			<h3>若網管人員前往維修時，寢室無人，則請舍監監督維修!!!</h3><br/>
-			備註(選填):<br/><textarea cols="20" rows="10" name="m"></textarea><br/>
-			
-			<input type="submit"/></form>
+			備註(選填):<br/><textarea cols="20" rows="10" name="m"></textarea><br/>		
+			<input type="submit" onclick="self.location.href='../index.php'"/></form>
 	</head>
-	<body onload="suc()">
+	<body >
 	</body>
 </html>
 <?php
