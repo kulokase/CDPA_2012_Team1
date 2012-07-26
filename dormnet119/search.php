@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 
-<head><meta charset="utf8">
-<title>查詢維修進度</title>
+<head>
+	<meta charset="utf8">
+	<title>查詢維修進度</title>
 </head>
 <body>
 
@@ -24,9 +25,9 @@
                 	</tr>
         	        <tfoot>
 	                        <tr>
-					<td><input type="button" value="忘記編號&密碼"/></td>
-                                	<td><input type="submit" value="開始查詢"/></td>
-                        	        <td><input type="reset" value="重新輸入" /></td>
+					<td colspan="3"><input type="button" value="忘記編號&密碼"/>
+                                	<input type="submit" value="開始查詢"/>
+                        	        <input type="reset" value="重新輸入" /></td>
                 	        </tr>
         	        </tfoot>
 	        </table>
@@ -112,12 +113,12 @@
 <h3>網管人員留言</h3>
 
 <?php
-/*
-function read(){
+
+function read_int(){
 
         require ("mysql.php");
-        $sql = "SELECT * FROM  `interactions` ";
-        $sth = $dbh->query($sql);
+        $sql_1 = "SELECT * FROM  `interactions`";
+        $sth = $dbh->query($sql_1);
         $result = $sth->fetchAll();
         foreach($result as $tmp){
                 echo htmlspecialchars($tmp['id']).'<br />';
@@ -128,43 +129,66 @@ function read(){
 
 }
 
-read ();
-*/
-echo " Hello World";
+read_int ();
+
+echo "123 Hello World";
                 /* This is a comment */
 ?>
 
 </div>
 
 
-<hr>
-
 
 <div style="color:; background:; filter : alpha(opacity=50); opacity : 0.5;">
 
 <h3>報修者留言</h3>
 
+
+
 <?php
-/*
-function read(){
+
+function write_log($id, $manager, $log){
+
+        require("mysql.php");
+
+        $sql_3 = "INSERT INTO `team1GuestDB`.`process_log` (`id`, `timestamp`, `manager`, `log`)
+                VALUES (:id, CURRENT_TIMESTAMP, :manager, :log);";
+
+        $stm = $dbh->prepare($sql_3);
+        $stm->execute(array(':id' => $id, ':manager' => $manager, ':log' => $log));
+}
+
+$id = "847";
+$manager = "PichuBaby";
+
+write_log($id, $manager, $_POST['log']);
+
+?>
+
+
+
+
+
+<?php
+
+function read_log(){
 
         require ("mysql.php");
-        $sql = "SELECT * FROM  `process_log` ";
-        $sth = $dbh->query($sql);
+        $sql_2 = "SELECT * FROM  `process_log` ";
+        $sth = $dbh->query($sql_2);
         $result = $sth->fetchAll();
         foreach($result as $tmp){
                 echo htmlspecialchars($tmp['id']).'<br />';
                 echo htmlspecialchars($tmp['timestamp'])."<br />";
                 echo htmlspecialchars($tmp['manager'])."<br />";
                 echo htmlspecialchars($tmp['log'])."<br />";
+                echo "<br />";
         }
 
 }
 
-read ();
-*/
-echo " Hello World";
-                /* This is a comment */
+read_log ();
+
 ?>
 
 </div>
@@ -178,31 +202,40 @@ echo " Hello World";
 <h3>報修者新增留言</h3>
 
 <form method="post"><p align=center>
+
         <table>
                 <tr>
-                        <td><label>Name:</label></td>
-                        <td><input type="text" name="name" readonly="readonly"/><br /></td>
+                        <td><label>報修編號：</label></td>
+                        <?php
+                        echo '<td><input type="text" value="'.$id.'" readonly="readonly"/><br /></td>';
+                        ?>
                 </tr>
                 <tr>
-                        <td><label>Content:</label></td>
-                        <td><textarea rows="3" cols="50" name="content"></textarea></td>
+                        <td><label>報修者：</label></td>
+
+                        <?php
+                        echo '<td><input type="text" value="'.$manager.'" readonly="readonly"/><br /></td>';
+                        ?>
+                </tr>
+                <tr>
+                        <td><label>留言內容:</label></td>
+                        <td><textarea rows="3" cols="50" name="log"></textarea></td>
                 </tr>
                 <tfoot>
                         <tr>
-                                <td><input type="submit" value="送出"/></td>
-                                <td><input type="reset" value="清空" /></td>
-                        </tr>
+                                <td colspan="2"><input type="submit" value="送出"/>
+                                <input type="reset" value="清空" /></td>
+                        
+
+
+
+			</tr>
                 </tfoot>
         </table>
 
 </p></form>
 
 </div>
-
-<!--
-INSERT INTO `team1GuestDB`.`process_log` (`id`, `timestamp`, `manager`, `log`) VALUES ('247', '2012-07-16', 'Pichu', 'AAA');
--->
-
 
 </body>
 </html>
