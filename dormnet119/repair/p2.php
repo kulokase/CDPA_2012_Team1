@@ -62,7 +62,7 @@
 
 <br/><br/><br/>
 
-<center><input type="submit" value="送出" /></center>
+<center><input type="submit" value="送出"  onclick="self.location.href='p3.php'"/></center>
 
 </body>
 
