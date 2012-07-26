@@ -271,16 +271,16 @@ read_log ();
         <table>
                 <tr>
                         <td><label>報修編號：</label></td>
-                        <?php
-                        echo '<td><input type="text" value="'.$id.'" readonly="readonly"/><br /></td>';
-                        ?>
+                        
+                        <td><input type="text" value="<?=$id?>" readonly="readonly"/><br></td>
+                        
                 </tr>
                 <tr>
                         <td><label>報修者：</label></td>
 
-                        <?php
-                        echo '<td><input type="text" value="'.$manager.'" readonly="readonly"/><br /></td>';
-                        ?>
+                        
+                        <td><input type="text" value="<?=$manager?>'" readonly="readonly"/><br /></td>
+                        
                 </tr>
                 <tr>
                         <td><label>留言內容:</label></td>
