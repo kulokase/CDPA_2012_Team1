@@ -76,9 +76,9 @@
 
 		</tbody>
 		</table>
-	<h3 class="formnote">IP設定方式</h3>
+	<h3 class="formnote">IP設定方式   <a href ="#XP">Windows XP</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href ="#Win7">Win7</a></h3>
 	<ul>
-	<li>Windows XP-IP設定步驟
+	<li><a name ="XP"><font size="4">Windows XP-IP設定步驟 </font></a>
 		<ul>
 			<li>開始 > 設定 > 網路連線 </li>
 			<li><img alt="Windows XP-IP設定步驟圖片1" title="Windows XP-IP設定步驟圖片1"
@@ -106,7 +106,7 @@
 
 
 
-	<li>Windows 7-IP設定步驟
+	<li><a name ="Win7"><font size ="4">Windows 7-IP設定步驟</font></a>
         	<ul>
   			<li>開始 > 控制台</li>
 			<br/>
