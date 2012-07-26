@@ -29,8 +29,7 @@
 		</form>
 		
 		<?php		
-	print_r($_POST);
-			if(isset($_POST['content'])){
+		/* (isset($_POST['content'])){
 				if($cfptr =fopen("data.txt","a+") != NULL ){
 				$name =$_POST['fname'];
 				$content=$_POST['content'];			
@@ -38,14 +37,35 @@
 				echo "www<br/> $name" . 'date("Y-m-d")'." $content";	
 				fclose($cfptr);
 			}else ;}else ;
+                 */
+		function write_database($in_name,$in_context){
+			require("mysql.php");
+			$sql ="INSERT INTO `team1GuestDB`.`GuestBook` (`id`, `name`, `msg`, `timestamp`) VALUES (NULL, :name, :msg, CURRENT_TIMESTAMP);";
+		$stm = $dbh->query($sql);
+		$stm ->execute(array( ':name' =>  $in_name , ':msg' => $in_context));
+		}
+		function read_database(){
+		        require("mysql.php");
+			$sql ="SELECT * FROM `GuestBook` ";
+        		$sth = $dbh->query($sql);
+        		$result = $sth->fetchAll();
+			foreach($result as $temp){
+				echo $temp['name'].$temp['timestamp'].'說'.$temp['msg'].'<br/>';  
+			}
+		};
 			
-			if($file =fopen("data.txt","r") != NULL ){
+			
+		/*	if($file =fopen("data.txt","r") != NULL ){
 			
 			
   			echo '<span class= \'conback\'>'. fgets($file) .'</span>';  			
 			
 			} else echo "Error";	
-			fclose($file);	
+
+			fclose($file);	*/
+		if(isset($_POST['fname']) && isset($_POST['content']))
+				write_database();
+		read_database();
 		?>
-     </body>
-</html>
+     <body/>
+<html/>
