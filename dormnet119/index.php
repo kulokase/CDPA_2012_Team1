@@ -27,7 +27,7 @@
 
 		<iframe src="data_base.php" width="320" height="570"></iframe>
 		<br/>
-		<span style= "color:darkviolet"><font size = "2">搜尋自己IP請善用<strong>"Ctrl+F5"</strong> 0v0</font></span>
+		<span style= "color:darkviolet"><font size = "2">搜尋自己IP請善用<strong>"Ctrl+F"</strong> 0v0</font></span>
 		<br/><br/>
 		<center/>
 	</body>
