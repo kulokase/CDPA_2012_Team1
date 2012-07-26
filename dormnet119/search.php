@@ -64,31 +64,13 @@ if (!empty($_POST['bugid']) or !empty($_POST['regpass'])) {
 	$stm = $dbh->prepare($sql);
 	$stm->execute(array(':user' => $user , ':pass'=>$pass));
 	$res = $stm->fetch();
-	?>
+	if ($res) {
+		echo "congratulation!!";
 
-
-
-
-		<?php
-		if ($res) {
-			echo "congratulation!!";
-
-
-			?>
-
-
-
-
-				<?php
-
-		}
-
-		else {
-			echo "Invalid login information.";
-		}
-} 
-
-else {
+	}else {
+		echo "Invalid login information.";
+	}
+}else{
 	echo "Please input username and password!";
 }
 ?>
