@@ -84,7 +84,17 @@
         <form>
                 <table>
                         <tr>
-                                <td><textarea rows="10" cols="80" readonly="readonly">test</textarea><br />
+                                <td><textarea rows="10" cols="80" readonly="readonly">
+
+報修問題主旨：
+詳情及補充說明：
+寢室資訊：H222
+手機：asdasd
+信箱：fdsa@jfklasf
+方便維修的日期及時間：
+星期一：星期二：星期三：星期四：星期五：星期六：星期日：
+
+				</textarea><br />
                         </tr>
                 </table>
 
@@ -97,17 +107,67 @@
 <hr>
 
 
-<h3>案件處理歷程</h3>
+<div style="color:; background:; filter : alpha(opacity=50); opacity : 0.5;">
 
-"網管的留言"
+<h3>網管人員留言</h3>
+
+<?php
+/*
+function read(){
+
+        require ("mysql.php");
+        $sql = "SELECT * FROM  `interactions` ";
+        $sth = $dbh->query($sql);
+        $result = $sth->fetchAll();
+        foreach($result as $tmp){
+                echo htmlspecialchars($tmp['id']).'<br />';
+                echo htmlspecialchars($tmp['timestamp'])."<br />";
+                echo htmlspecialchars($tmp['manager'])."<br />";
+                echo htmlspecialchars($tmp['log'])."<br />";
+        }
+
+}
+
+read ();
+*/
+echo " Hello World";
+                /* This is a comment */
+?>
+
+</div>
 
 
 <hr>
 
 
+<div style="color:; background:; filter : alpha(opacity=50); opacity : 0.5;">
+
 <h3>報修者留言</h3>
 
-"報修者的留言"
+<?php
+/*
+function read(){
+
+        require ("mysql.php");
+        $sql = "SELECT * FROM  `process_log` ";
+        $sth = $dbh->query($sql);
+        $result = $sth->fetchAll();
+        foreach($result as $tmp){
+                echo htmlspecialchars($tmp['id']).'<br />';
+                echo htmlspecialchars($tmp['timestamp'])."<br />";
+                echo htmlspecialchars($tmp['manager'])."<br />";
+                echo htmlspecialchars($tmp['log'])."<br />";
+        }
+
+}
+
+read ();
+*/
+echo " Hello World";
+                /* This is a comment */
+?>
+
+</div>
 
 
 <hr>
@@ -139,15 +199,9 @@
 
 </div>
 
-<div style="color:snow; background:;filter : alpha(opacity=50); opacity : 0.5;">
-
-
-
-
-
-
-
-
+<!--
+INSERT INTO `team1GuestDB`.`process_log` (`id`, `timestamp`, `manager`, `log`) VALUES ('247', '2012-07-16', 'Pichu', 'AAA');
+-->
 
 
 </body>
