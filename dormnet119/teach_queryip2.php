@@ -2,6 +2,7 @@
 	<head>
 		<meta charset="utf-8"/>
 		<title>查詢IP設定</title>
+		<link rel="stylesheet" type="text/css" href="teach.css">
 		<style type="text/css">
 		div.content table {
 			font-style: normal;

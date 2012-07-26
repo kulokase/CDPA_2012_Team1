@@ -7,6 +7,17 @@
 </head>
 <body>
 
+
+
+<script type="text/javascript" src="jquery-1.6.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+//$("div#information").hide();
+});
+</script>
+
+
+
 <div style="color:; background:; filter : alpha(opacity=50); opacity : 0.5;">
 
 <p align=center>
@@ -37,6 +48,7 @@
 
 </div>
 
+
 <?php
 
 require ("mysql.php");
@@ -49,9 +61,23 @@ if (!empty($_POST['bugid']) or !empty($_POST['regpass'])) {
 	$stm = $dbh->prepare($sql);
 	$stm->execute(array(':user' => $user , ':pass'=>$pass));
 	$res = $stm->fetch();
+?>
 
+
+
+
+<?php
 	if ($res) {
 		echo "congratulation!!";
+		
+
+?>
+
+
+
+
+<?php
+		
 	}
 
 	else {
@@ -65,8 +91,36 @@ else {
 ?>
 
 
+<script type="text/javascript">
+        //XXXDDD
+                $(document).ready(function(){
+
+<?php if($res){ ?>
+                $("div#information").show();
+<?php }else{ ?>
+                $("div#information").hide();
+<?php } ?>
+
+                alert();
+                });
+</script>
+
+
 <hr>
 
+<!--
+<script type="text/javascript" src="jquery-1.6.2.min.js"></script>
+<script type="text/javascript"> 
+$(document).ready(function(){
+$("div#information").hide(); 
+});
+</script>
+-->
+
+
+
+
+<div id="information">
 <?php
 
 function read_status(){
@@ -195,8 +249,6 @@ read_int ();
 
 <h3>結案紀錄</h3>
 
-<<<<<<< HEAD
-=======
 <?php
 
 function read_log(){
@@ -261,10 +313,11 @@ read_log ();
                 </tfoot>
         </table>
 
-</p></form>
+	</p></form>
+
+	</div>
+
 
 </div>
-
->>>>>>> 1652b12f3f173409e1b2d085dc8b5d927baa7478
 </body>
 </html>
