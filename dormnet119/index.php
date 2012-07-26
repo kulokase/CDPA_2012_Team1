@@ -2,15 +2,21 @@
 	<head><meta charset = "utf8">
 		<title>首頁</title>
 	</head>
-	<body bgcolor = blanchedalmond >
+	<body style="background: url(http://cute.pro.vexp.idv.tw/k18.gif)" >
 	<center>
-	<h1>歡迎來到報修頁面(鳩咪</h1>
-	<br/>
-	<button onclick="self.location.href='repair/p1.php'"><img src= "https://fbcdn-sphotos-a.akamaihd.net/hphotos-ak-ash3/539104_327904923969511_704325760_n.jpg"></button>
-        <button onclick="self.location.href='search.html'"><img src= "https://fbcdn-sphotos-a.akamaihd.net/hphotos-ak-ash3/557303_327904937302843_1375925505_n.jpg"></button>
-        <button onclick="self.location.href='teach.html'"><img src= "https://fbcdn-sphotos-a.akamaihd.net/hphotos-ak-prn1/531182_327904950636175_471626948_n.jpg"></button><br/><br/>
 
-<iframe src="data_base.php" width="1050" height="550"></iframe>
+
+	<br/>
+	<input name="submit" type=submit style="border: 0px solid #BB9EF8;color :#333333;height:45; width: 160; background-color: #9999FF; font-size: 26 pt" value='報修點我' onclick="window.open('repair/p3.php');">
+
+        <input name="submit" type=submit style="border: 0px solid #BB9EF8;color :#333333;height:45; width: 160; background-color: #9999FF; font-size: 26 pt" value='進度查詢' onclick="window.open('search.php');">
+
+        <input name="submit" type=submit style="border: 0px solid #BB9EF8;color :#333333;height:45; width: 160; background-color: #9999FF; font-size: 26 pt" value='教學點我' onclick="window.open('teach.html');">
+<br/><br/><br/>
+	<span style= "color:red"><font size = "5"><strong>流量Top100!!</strong></font></span><br/><br/>
+
+<iframe src="data_base.php" width="320" height="570"></iframe>
+
 	<center/>
 	</body>
 </html>
