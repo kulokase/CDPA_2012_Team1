@@ -36,8 +36,60 @@
 
 </div>
 
+<?php
+
+require ("mysql.php");
+if (!empty($_POST['bugid']) or !empty($_POST['regpass'])) {
+
+	$user = trim($_POST['bugid']);
+	$pass = trim($_POST['regpass']);
+
+	$sql = "SELECT * FROM `reg_pair` WHERE `bugid` =:user AND `regpass` = :pass LIMIT 1";
+	$stm = $dbh->prepare($sql);
+	$stm->execute(array(':user' => $user , ':pass'=>$pass));
+	$res = $stm->fetch();
+
+	if ($res) {
+		echo "congratulation!!";
+	}
+
+	else {
+		echo "Invalid login information.";
+	}
+} 
+
+else {
+	echo "Please input username and password!";
+}
+?>
+
 
 <hr>
+
+<?php
+
+function read_status(){
+
+        require ("mysql.php");
+        $sql = "SELECT * FROM  `bug` LIMIT 0 , 30 ";
+        $sth = $dbh->query($sql);
+        $result = $sth->fetchAll();
+/*
+        foreach($result as $tmp){
+                echo htmlspecialchars($tmp['id']).'<br />';
+                echo htmlspecialchars($tmp['timestamp'])."<br />";
+                echo htmlspecialchars($tmp['uname']).'<br />';
+                echo htmlspecialchars($tmp['ip'])."<br />";
+                echo htmlspecialchars($tmp['mac']).'<br />';
+                echo htmlspecialchars($tmp['status'])."<br />";
+        }
+*/
+	return $result[0];
+}
+
+$data = read_status();
+
+?>
 
 
 <div style="color:; background:; filter : alpha(opacity=50); opacity : 0.5;">
@@ -46,8 +98,7 @@
 
 <h3>報修詳細資訊</h3>
 
-        <form>
-                <table>
+                 <table>
                         <tr>
                                 <td><label>報修編號</label></td>
                                 <td><label>報修時間</label></td>
@@ -56,21 +107,36 @@
                                 <td><label>報修網路卡號</label></td>
                                 <td><label>處理狀態</label></td>
                         </tr>
-                        <tr>
-                                <td><input type="text" name="num" value="test" readonly="readonly"/><br /></td>
-				<td><input type="text" name="num" value="test" readonly="readonly"/><br /></td>
-				<td><input type="text" name="num" value="test" readonly="readonly"/><br /></td>
-				<td><input type="text" name="num" value="test" readonly="readonly"/><br /></td>
-				<td><input type="text" name="num" value="test" readonly="readonly"/><br /></td>
-				<td><input type="text" name="num" value="test" readonly="readonly"/><br /></td>
+		
+                       
+			 <tr>
+                                <td><input type="text" name="id" value="
+				<?php echo isset($data['id'])?htmlspecialchars($data['id']):""; ?>
+				" readonly="readonly"/><br /></td>
+				
+				<td><input type="text" name="time" value="
+				<?php echo isset($data['timestamp'])?htmlspecialchars($data['timestamp']):""; ?>
+				" readonly="readonly"/><br /></td>
+				
+				<td><input type="text" name="who" value="
+				<?php echo isset($data['uname'])?htmlspecialchars($data['uname']):""; ?>
+				" readonly="readonly"/><br /></td>
+				
+				<td><input type="text" name="ip" value="
+				<?php echo isset($data['ip'])?htmlspecialchars($data['ip']):""; ?>
+				" readonly="readonly"/><br /></td>
+				
+				<td><input type="text" name="mac" value="
+				<?php echo isset($data['mac'])?htmlspecialchars($data['mac']):""; ?>
+				" readonly="readonly"/><br /></td>
+				
+				<td><input type="text" name="status" value="
+				<?php echo isset($data['status'])?htmlspecialchars($data['status']):""; ?>
+				" readonly="readonly"/><br /></td>
                         </tr>
                 </table>
-
         </p>
-</form>
-
 </div>
-
 
 <hr>
 
@@ -159,35 +225,6 @@
 </p></form>
 
 </div>
-
-
-<?php
-
-function read(){
-
-        require ("mysql.php");
-        $sql = "SELECT * FROM  `GuestBook` ";
-        $sth = $dbh->query($sql);
-        $result = $sth->fetchAll();
-        foreach($result as $tmp){
-                echo htmlspecialchars($tmp['name']).'<br />';
-                echo htmlspecialchars($tmp['msg'])."<br />";
-        }
-
-}
-
-read ();
-
-echo " Hello World";
-                /* This is a comment */
-?>
-
-
-
-
-
-
-
 
 
 </body>
