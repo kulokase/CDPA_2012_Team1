@@ -139,37 +139,6 @@ $data = read_status();
         </p>
 </div>
 
-<hr>
-
-
-<div style="color:; background:; filter : alpha(opacity=50); opacity : 0.5;">
-
-<p align=center>
-
-<h3>原始報修資訊</h3>
-
-        <form>
-                <table>
-                        <tr>
-                                <td><textarea rows="10" cols="80" readonly="readonly">
-
-報修問題主旨：
-詳情及補充說明：
-寢室資訊：H222
-手機：asdasd
-信箱：fdsa@jfklasf
-方便維修的日期及時間：
-星期一：星期二：星期三：星期四：星期五：星期六：星期日：
-
-				</textarea><br />
-                        </tr>
-                </table>
-
-        </p>
-</form>
-
-</div>
-
 
 <hr>
 
