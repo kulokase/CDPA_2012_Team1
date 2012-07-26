@@ -3,7 +3,7 @@
 		<title> 報修單 </title>
 	</head>
 <body>
-	<h1><center><strong><em>Dormnet119</em></strong></center></h1>
+	<center><h1><strong><em>Dormnet119</em></strong></h1>
 	<style type="text/css">
 		.y0-uix-button {
    			 height:2.0833em;
@@ -51,11 +51,11 @@
 			filter:glow;
 		}
 	</style>
-	<BUTTON style"button" onclick="self.location.href='p2.php'">
-		<span class="y0-uix-button">填 報 修 單</span>
+	<BUTTON  onclick="self.location.href='p2.php'">
+         <span class="yt-uix-button">填 報 修 單</span>
 	</BUTTON>
-	<BUTTON style"button" onclick="self.location.href='p4.php'">
-		<span class="button_word">改 報 修 單</span>
+	<BUTTON onclick="self.location.href='p4.php'">
+		<span class="yt-uix-button">改 報 修 單</span>
 	</BUTTON>
 	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
@@ -64,6 +64,6 @@
 	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 	<BUTTON style="WIDTH:80px ; HEIGHT:40px ">回首頁</BUTTON>
-
+        <center/>
 </body>
 </html>

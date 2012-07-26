@@ -110,9 +110,26 @@
 
 <div style="color:; background:; filter : alpha(opacity=50); opacity : 0.5;">
 
-<h3>網管人員留言</h3>
+<h3>案件處理歷程</h3>
+
 
 <?php
+
+function write_int($id, $manager, $log){
+
+        require("mysql.php");
+
+        $sql_3 = "INSERT INTO `team1GuestDB`.`interactions` (`id`, `timestamp`, `manager`, `log`)
+                VALUES (:id, CURRENT_TIMESTAMP, :manager, :log);";
+
+        $stm = $dbh->prepare($sql_3);
+        $stm->execute(array(':id' => $id, ':manager' => $manager, ':log' => $log));
+}
+
+$id = "777";
+$manager = "PichuBabyXDDDDDDDDDDDD";
+
+write_int($id, $manager, $_POST['log']);
 
 function read_int(){
 
@@ -131,43 +148,17 @@ function read_int(){
 
 read_int ();
 
-echo "123 Hello World";
-                /* This is a comment */
 ?>
 
 </div>
 
 
+<hr>
+
 
 <div style="color:; background:; filter : alpha(opacity=50); opacity : 0.5;">
 
-<h3>報修者留言</h3>
-
-
-
-<?php
-
-function write_log($id, $manager, $log){
-
-        require("mysql.php");
-
-        $sql_3 = "INSERT INTO `team1GuestDB`.`process_log` (`id`, `timestamp`, `manager`, `log`)
-                VALUES (:id, CURRENT_TIMESTAMP, :manager, :log);";
-
-        $stm = $dbh->prepare($sql_3);
-        $stm->execute(array(':id' => $id, ':manager' => $manager, ':log' => $log));
-}
-
-$id = "847";
-$manager = "PichuBaby";
-
-write_log($id, $manager, $_POST['log']);
-
-?>
-
-
-
-
+<h3>結案紀錄</h3>
 
 <?php
 
