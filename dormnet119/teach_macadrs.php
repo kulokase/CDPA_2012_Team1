@@ -28,11 +28,20 @@
 
 	</ol>
 	
+	<ul>
 		<li> <a name = "WIN7">Windows 7 </a> </li>
 
 
 	<ol>
-		
+		<li>開始</li>
+                <img alt="teach_xp_mac1" title="teach_xp_mac1" src ="http://140.117.202.135/~ut0216_1/CDPA_2012_Team1/dormnet119/IMG/teach/win7_1.jpg">
+                <li>在執行的欄位輸入 "cmd" </li>
+                <img alt="teach_xp_mac2" title="teach_xp_mac2" src ="http://140.117.202.135/~ut0216_1/CDPA_2012_Team1/dormnet119/IMG/teach/win7_2.jpg">
+                <li>在黑色的框框中輸入 "ipconfig /all"  Physical Address 即為你的網路卡卡號(MAC Address)</li>
+                <img alt="teach_xp_mac3" title="teach_xp_mac3" src ="http://140.117.202.135/~ut0216_1/CDPA_2012_Team1/dormnet119/IMG/teach/win7_3.jpg">
+		 <li>在黑色的框框中輸入 "ipconfig /all"  Physical Address 即為你的網路卡卡號(MAC Address)</li>
+                <img alt="teach_xp_mac3" title="teach_xp_mac3" src ="http://140.117.202.135/~ut0216_1/CDPA_2012_Team1/dormnet119/IMG/teach/win7_4.jpg">
+	
 
 
 
