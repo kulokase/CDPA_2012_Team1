@@ -95,7 +95,7 @@
 			<li><img alt="Windows XP-IP設定步驟圖片2" title="Windows XP-IP設定步驟圖片2" 
 				 src="IMG/teach/XP_config2.jpg" />
 			</li>
-			<li>找出「Internet Protocol(TCP/IP)」 > 點選 "內容"</li>
+			<li>找出「Internet Protocol(TCP/IP)」>  點選 "內容"</li>
 			<li><img alt="Windows XP-IP設定步驟圖片3" title="Windows XP-IP設定步驟圖片3" 
 				 src="IMG/teach/XP_config3.jpg" />
 			</li>
