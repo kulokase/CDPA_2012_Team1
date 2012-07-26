@@ -34,9 +34,10 @@
 		<label id="label-type1" for="content"><big><strong>留言內容：</strong></big></label>
 		<br/> 
 		<textarea rows="10" cols="50" name="mes"></textarea>
+		<input type="reset"/>
 		<input type="submit" value="Send"/>
 	</form>
-	<p style="color:blue;font-size:30px"><strong>[留言牆]</strong></p>
+	<p style="color:blue;font-size:30px"><strong>~~~[留言牆]~~~</strong></p>
 	<br/>
 	<?php
 		function writetofile()
