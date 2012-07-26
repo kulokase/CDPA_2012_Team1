@@ -1,0 +1,160 @@
+現有Dormnet119功能~
+    申請維修
+		報修一個新問題
+			要求使用者確認報修原因(封鎖、壞掉)
+			送出修改用密碼
+		更改舊問題資料
+			輸入修改用密碼
+		
+	查詢進度
+	封鎖查詢
+		欠繳電費
+		搜尋封鎖列表
+		網孔封鎖列表
+		教育部封鎖列表
+	各式教學
+		查詢IP
+		查詢網路卡卡號
+英文版
+
+
+
+
+
+目標進度
+
+[決定各頁面長相及配置]=>[完成雛形]=>[將後端與前端完成]==後端線==>[測試從POST接收資訊到寫入資料庫，以及回傳資料有無問題]
+
+										
+資料庫部分，經過討論決定以現有的為準
+
+Database DormNet===
+
+CREATE TABLE `bug` (         --  主要用來記錄報修單的資料表
+  `id` int(255) NOT NULL auto_increment,                            --  id 主鍵
+  `timestamp` varchar(127) character set utf8 NOT NULL default '',  --  報修時間
+  `topic` varchar(128) character set utf8 NOT NULL default '',      --  報修主題
+  `uname` varchar(128) character set utf8 NOT NULL default '',      --  使用者名稱
+  `email` varchar(128) character set utf8 NOT NULL default '',      --  使用者信箱
+  `ip` varchar(128) character set utf8 NOT NULL default '',         --  使用者報修之IP
+  `mac` varchar(128) character set utf8 NOT NULL default '',        --  使用者報修之mac
+  `bad_mac` varchar(128) character set utf8 NOT NULL default '',    --  錯用IP狀況時，使用者查到搶他IP的MAC
+  `dorm` varchar(128) character set utf8 NOT NULL default '',       --  宿舍棟別
+  `phone` varchar(128) character set utf8 NOT NULL default '',      --  寢機
+  `type` varchar(128) character set utf8 NOT NULL default '',       --  報修類別
+  `status` varchar(128) character set utf8 NOT NULL default '',     --  報修單狀態
+  `comment` text character set utf8 NOT NULL,                       --  詳情或補充說明
+  PRIMARY KEY  (`id`),
+  KEY `status` (`status`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7236 ;
+
+
+CREATE TABLE `dorm` (         --  主要用來記錄棟別資訊的資料表
+  `id` varchar(2) NOT NULL default '',                 --  棟簡稱 1234ABCDEFGHL
+  `name` varchar(7) NOT NULL default '',               --  棟名稱
+  `subnetmask` varchar(8) NOT NULL default '',         --  
+  `gateway` varchar(8) NOT NULL default ''             -- 
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `interactions` (  --  用來記錄網管與使用者的聯絡紀錄
+  `id` int(255) NOT NULL default '0',               --  報修單編號
+  `manager` varchar(127) NOT NULL default '',       --  網管名稱/使用者姓名
+  `log` text NOT NULL,                              --  留言
+  `timestamp` varchar(127) NOT NULL default '',     --  時間
+  KEY `id` (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE `problem_status` ( --  用來轉出問題狀態的中文
+  `id` varchar(25) NOT NULL default '',         --  問題代碼 
+  `descr` varchar(127) NOT NULL default ''		--  問題描述
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+id	descr
+open	問題尚未處理
+closed	問題處理完畢
+processing	此問題處理中
+updated	問題狀態更新
+
+
+CREATE TABLE `problem_type` ( --  用來轉出問題類別的中文
+  `id` varchar(25) NOT NULL default '',                         --  類別代碼
+  `descr` varchar(128) character set utf8 NOT NULL default ''   --  類別描述
+) ENGINE=MyISAM
+-- 列出以下資料庫的數據： `problem_type`
+--
+
+INSERT INTO `problem_type` VALUES('ipstolen', 'IP被人佔用');
+INSERT INTO `problem_type` VALUES('reopen', '申請解除封鎖');
+INSERT INTO `problem_type` VALUES('broken', '外觀明顯損壞');
+INSERT INTO `problem_type` VALUES('switch', '附近寢室皆無法上網');
+INSERT INTO `problem_type` VALUES('dvo', '網路插孔損壞');
+INSERT INTO `problem_type` VALUES('others', '其他');
+
+
+所以就英文版而言 其實這樣的設計是有點問題的
+
+
+CREATE TABLE `process_log` (                              --  處理記錄
+  `id` int(255) NOT NULL default '0',                     --  報修單編號
+  `timestamp` varchar(127) NOT NULL default '',           --  結束時間
+  `manager` varchar(127) NOT NULL default '',             --  網管名稱
+  `log` text NOT NULL,                                    --  紀錄
+  KEY `id` (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+和interactions的差別在於，這份資料表主要紀錄處理結束的最後一筆紀錄 
+									
+
+
+CREATE TABLE `reg_pair` (                      --  報修單密碼
+  `bugid` int(255) NOT NULL default '0',       --  報修單編號
+  `regpass` varchar(6) NOT NULL default '',    --  密碼(明碼
+  PRIMARY KEY  (`bugid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+用來修改報修單用的
+
+
+
+原本網頁樹狀圖
+
+[index.php]
+       ||
+	   ||根據參數判斷頁面
+	   ||==================>if($action=="BugReport") require ("INC/BugReport.php");
+	   ||					else if($action=="BugStatus") require ("INC/BugStatus.php");
+	   ||					else if($action=="BannedList") require ("INC/BannedList.php");
+	   ||					else if($action=="Tuition") require ("INC/Tuition.php");
+	   ||					else if($action=="History") require ("INC/History.php");
+	   ||					else if($action=="CopyRight") require ("INC/CopyRight.php");
+	   ||					else if($action=="MSN") require ("INC/MSN.php");    // by paca
+	   ||					else{
+	   ||
+	   ||假如沒有參數，根據Proxy IP確認是否應該回傳Jail畫面
+	   ||=====一般畫面==> require ("INC/Annouce.php");
+	   ||=====Jail畫面==> require ("INC/BlockReason.php");
+
+	   
+["INC/BugReport.php"]
+	||
+	||
+	||============>"INC/BugReport_zh.php"
+
+["INC/BugReport_zh.php"]
+    ||
+	||  根據是否修改報修單　include不同的檔案
+	||==============>
+	
+
+
+_()
+gettext
+
+
+
+
+
+
+
+									
+  

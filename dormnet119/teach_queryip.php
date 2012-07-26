@@ -14,24 +14,24 @@
 		<h3 align="center" class="formnote">請選擇寢室資訊<br/>Please enter your information of your dorm.</h3>
 		<form name="query" action="./teach_queryip2.php" method="post">
 			<fieldset>
-			<legend>輸入IP設定資訊</legend>
+			<legend>輸入IP設定資訊(目前實裝武嶺一村201室1-4床、翠亨E棟101室1-4床)</legend>
 			<img align="right" src="IMG/teach/Contrast.gif" width="164" height="120" alt="寢室床位對照表" title="寢室床位對照表" />
 			<p>宿舍棟別：
 			<select name="dorm">
 				<option value="--請選擇--"></option>
-				<option value="1|255.255.254.0|140.117.193.254">武嶺一村</option>			
-				<option value="2|255.255.254.0|140.117.195.254">武嶺二村</option>			
-				<option value="3|255.255.254.0|140.117.197.254">武嶺三村</option>			
-				<option value="4|255.255.254.0|140.117.199.254">武嶺四村</option>			
-				<option value="A|255.255.255.0|140.117.177.254">翠亨A棟</option>			
-				<option value="B|255.255.255.0|140.117.178.254">翠亨B棟</option>			
-				<option value="C|255.255.255.0|140.117.179.254">翠亨C棟</option>			
-				<option value="D|255.255.255.0|140.117.177.254">翠亨D棟</option>			
-				<option value="E|255.255.254.0|140.117.181.254">翠亨E棟</option>			
-				<option value="F|255.255.254.0|140.117.183.254">翠亨F棟</option>			
-				<option value="G|255.255.252.0|140.117.201.254">翠亨G棟</option>			
-				<option value="H|255.255.252.0|140.117.187.254">翠亨H棟</option>			
-				<option value="L|255.255.252.0|140.117.191.254">翠亨L棟</option>			
+				<option value="1">武嶺一村</option>			
+				<option value="2">武嶺二村</option>			
+				<option value="3">武嶺三村</option>			
+				<option value="4">武嶺四村</option>			
+				<option value="A">翠亨A棟</option>			
+				<option value="B">翠亨B棟</option>			
+				<option value="C">翠亨C棟</option>			
+				<option value="D">翠亨D棟</option>			
+				<option value="E">翠亨E棟</option>			
+				<option value="F">翠亨F棟</option>			
+				<option value="G">翠亨G棟</option>			
+				<option value="H">翠亨H棟</option>			
+				<option value="L">翠亨L棟</option>			
 			</select>
 			</p>
 			<p>寢室房號：<input name="room" size="4" maxlength="3" />(Example：202、304)</p>
