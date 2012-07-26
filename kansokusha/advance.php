@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<meta charset="utf-8">
 		<title>TinyGuestBook</title>
 		<link rel="stylesheet" type="text/css" href="./default.css">
 		<style type = "text/css">
@@ -48,7 +49,10 @@
 		        $sth = $dbh->query($sql);
 			$result = $sth->fetchAll();
 		        foreach($result as $tmp){
-				echo $tmp['name'] . " says: <br/>"  . $tmp['msg'] . '<br/>';
+				echo '<p>' . htmlspecialchars($tmp['id']) . ". "
+				           . htmlspecialchars($tmp['name']) . " ("  
+				   	   . htmlspecialchars($tmp['timestamp']) . ") " . ' says: <br/>' 
+				   	   . htmlspecialchars($tmp['msg']) . '<br/>' . '<hr/>' . '</p>';
 			}
 			//print_r($sth->fetchAll());
 			/*$file = fopen("dailogue.txt","r") or exit("Unable to open file!");
@@ -63,7 +67,6 @@
 			writeTo($_POST['name'],$_POST['content']);
 		}
 		readFrom();
-
 	?>
 	</body>
 </html>
