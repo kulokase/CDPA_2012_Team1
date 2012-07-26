@@ -10,7 +10,7 @@
         <button onclick="self.location.href='search.html'"><img src= "https://fbcdn-sphotos-a.akamaihd.net/hphotos-ak-ash3/557303_327904937302843_1375925505_n.jpg"></button>
         <button onclick="self.location.href='teach.html'"><img src= "https://fbcdn-sphotos-a.akamaihd.net/hphotos-ak-prn1/531182_327904950636175_471626948_n.jpg"></button><br/><br/>
 
-<iframe src="http://top100.cdpa.tw/ajax.php" width="1050" height="550"></iframe>
+<iframe src="data_base.php" width="1050" height="550"></iframe>
 	<center/>
 	</body>
 </html>
