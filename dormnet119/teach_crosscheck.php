@@ -2,6 +2,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>交叉測試</title>
+		<link rel="stylesheet" type="text/css" href="teach.css">
 		<style type="text/css">
 		div.content {
 

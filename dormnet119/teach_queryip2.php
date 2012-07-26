@@ -2,6 +2,7 @@
 	<head>
 		<meta charset="utf-8"/>
 		<title>查詢IP設定</title>
+		<link rel="stylesheet" type="text/css" href="teach.css">
 		<style type="text/css">
 		div.content table {
 			font-style: normal;
@@ -73,7 +74,7 @@
 						echo '<td>' . $tmp['bed'] . '</td>' .
 						     '<td>' . $tmp['ip'] . '</td>' .
 						     '<td>' . $tmp['subnetmask'] . '</td>' .
-						     '<td>' . $tmp['gateway'] . '</td>';
+						     '<td>' . $tmp['gateway'] . '</td>' .
 						     '<td class="lastcol">' . '140.117.11.1' . '</td>';
 					}
 				}
@@ -83,27 +84,31 @@
 
 		</tbody>
 		</table>
-	<h3 class="formnote">IP設定方式</h3>
+	<h3 class="formnote">IP設定方式   <a href ="#XP">Windows XP</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href ="#Win7">Win7</a></h3>
 	<ul>
-	<li>Windows XP-IP設定步驟
-		<ul>
+	<li><a name ="XP"><font size="4">Windows XP-IP設定步驟 </font></a>
+		<ol>
 			<li>開始 > 設定 > 網路連線 </li>
-			<li><img alt="Windows XP-IP設定步驟圖片1" title="Windows XP-IP設定步驟圖片1"
+			<br/>
+			<img alt="Windows XP-IP設定步驟圖片1" title="Windows XP-IP設定步驟圖片1"
 				 src="IMG/teach/XP_config1.jpg" />
-			</li>
+			
 			<li>在開啟的視窗中，尋找您正要設定的連線(通常為區域連線) > 右鍵 > 內容</li>
-			<li><img alt="Windows XP-IP設定步驟圖片2" title="Windows XP-IP設定步驟圖片2" 
+			<br/>
+			<img alt="Windows XP-IP設定步驟圖片2" title="Windows XP-IP設定步驟圖片2" 
 				 src="IMG/teach/XP_config2.jpg" />
-			</li>
-			<li>找出「Internet Protocol(TCP/IP)」 > 點選 "內容"</li>
-			<li><img alt="Windows XP-IP設定步驟圖片3" title="Windows XP-IP設定步驟圖片3" 
+			
+			<li>找出「Internet Protocol(TCP/IP)」>  點選 "內容"</li>
+			<br/>
+			<img alt="Windows XP-IP設定步驟圖片3" title="Windows XP-IP設定步驟圖片3" 
 				 src="IMG/teach/XP_config3.jpg" />
-			</li>
+			
 			<li>在開啟的視窗中，鍵入上面的ip設定資訊。並依圖打上建議的「DNS伺服器」</li>
-			<li><img alt="Windows XP-IP設定步驟圖片4" title="Windows XP-IP設定步驟圖片4" 
+			<br/>
+			<img alt="Windows XP-IP設定步驟圖片4" title="Windows XP-IP設定步驟圖片4" 
 				 src="IMG/teach/XP_config4.jpg" />
-			</li>
-		</ul>
+			
+		</ol>
 	</li>
 </ul>
 
@@ -113,45 +118,45 @@
 
 
 
-	<li>Windows 7-IP設定步驟
-        	<ul>
+	<li><a name ="Win7"><font size ="4">Windows 7-IP設定步驟</font></a>
+        	<ol>
   			<li>開始 > 控制台</li>
 			<br/>
-  			<li><img alt="Windows 7-IP設定步驟圖片1" title="Windows XP-IP設定步驟圖片1"
+  			<img alt="Windows 7-IP設定步驟圖片1" title="Windows XP-IP設定步驟圖片1"
 		 		 src="IMG/teach/win7_config1.jpg" />
- 			</li>
+ 			
 			<li>點選"檢視網路狀態及工作"</li>
 			<br/>
-			<li><img alt="Windows 7-IP設定步驟圖片2" title="Windows XP-IP設定步驟圖片2" 
+			<img alt="Windows 7-IP設定步驟圖片2" title="Windows XP-IP設定步驟圖片2" 
 		 		 src="IMG/teach/win7_config2.jpg" />
-			</li>
+			
 			<li>點選"變更介面卡設定"</li>
 			<br/>
-			<li><img alt="Windows 7-IP設定步驟圖片3" title="Windows XP-IP設定步驟圖片3"
+			<img alt="Windows 7-IP設定步驟圖片3" title="Windows XP-IP設定步驟圖片3"
 		 	 	 src="IMG/teach/win7_config3.jpg" />
-			</li>
+			
 			<li>在區域連線點選右鍵</li>
 			<br/>
-			<li><img alt="Windows XP-IP設定步驟圖片4" title="Windows XP-IP設定步驟圖片4"
+			<img alt="Windows XP-IP設定步驟圖片4" title="Windows XP-IP設定步驟圖片4"
 		 	 	 src="IMG/teach/win7_config4.jpg" />
-			</li>
+			
 			<li>點選內容</li>
                         <br/>
-                        <li><img alt="Windows XP-IP設定步驟圖片4" title="Windows XP-IP設定步驟圖片4"
+                        <img alt="Windows XP-IP設定步驟圖片5" title="Windows XP-IP設定步驟圖片5"
                                  src="IMG/teach/win7_config5.jpg" />
-                        </li>
+                        
 			<li>點選"網際網路通訊協定第4版"(TCP/IPv4) > 接著點內容</li>
                         <br/>
-                        <li><img alt="Windows XP-IP設定步驟圖片4" title="Windows XP-IP設定步驟圖片4"
+                        <img alt="Windows XP-IP設定步驟圖片6" title="Windows XP-IP設定步驟圖片6"
                                  src="IMG/teach/win7_config6.jpg" />
-                        </li>
-			<li></li>
+                        
+			<li>在開啟的視窗中，鍵入上面的ip設定資訊。並依圖打上建議的「DNS伺服器」</li>
                         <br/>
-                        <li><img alt="Windows XP-IP設定步驟圖片4" title="Windows XP-IP設定步驟圖片4"
+                        <img alt="Windows XP-IP設定步驟圖片7" title="Windows XP-IP設定步驟圖片7"
                                  src="IMG/teach/win7_config7.jpg" />
-                        </li>
+                        
 
-		</ul>
+		</ol>
 	</li>
 </ul>
 </body>

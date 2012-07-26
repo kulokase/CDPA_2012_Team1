@@ -2,6 +2,7 @@
 	<head>
                 <meta charset="utf-8"/>
                 <title>查詢IP設定</title>
+		<link rel="stylesheet" type="text/css" herf="teach.css"/>
                 <style type="text/css">
                 div.content {
 
@@ -15,7 +16,7 @@
 		<form name="query" action="./teach_queryip2.php" method="post">
 			<fieldset>
 			<legend>輸入IP設定資訊(目前實裝武嶺一村201室1-4床、翠亨E棟101室1-4床)</legend>
-			<img align="right" src="IMG/teach/Contrast.gif" width="164" height="120" alt="寢室床位對照表" title="寢室床位對照表" />
+			<img align="right" src="IMG/teach/Contrast.gif" width="164" height="120" title="寢室床位對照表" />
 			<p>宿舍棟別：
 			<select name="dorm">
 				<option value="--請選擇--"></option>
