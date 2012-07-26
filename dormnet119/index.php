@@ -15,7 +15,7 @@
 <br/><br/><br/>
 	<span style= "color:red"><font size = "5"><strong>流量Top100!!</strong></font></span><br/><br/>
 
-<iframe src="data_base.php" width="1050" height="550"></iframe>
+<iframe src="data_base.php" width="320" height="570"></iframe>
 
 	<center/>
 	</body>
