@@ -19,44 +19,23 @@
 
 <center><table>
 	<tr>
-
-		<td>
-			問題：
-		</td>
-		<td>
-			Y
-		</td>
-		<td>
-			N
-		</td>
+		<th><center>問題：</center></th>
+		<th><center>Y</center></th>
+		<th><center>N</center></th>
 	</tr>
 	<tr>
 		<form  method="get">
-			<td>
-			       將自己的電腦連接同房的網孔後是否能連線: 
-			</td>
-			<td>
-				<input type = "radio" name="check1" id="y" /> 
-			</td>
-			<td>
-				<input type = "radio" name="check1" id="n"/><br/>
-			</td>
+			<td>將自己的電腦連接同房的網孔後是否能連線: </td>
+			<td><input type = "radio" name="check1" id="y" /></td>
+			<td><input type = "radio" name="check1" id="n"/><br/></td>
 		</form>
 	</tr>
 	<tr>
-		
 		<form method="get">
-                        <td> 
-                               將自己的電腦連接同房的網孔後是否能連線: 
-                        </td>
-                        <td>
-                                <input type = "radio" name="check2" id="y"  />  
-                        </td>
-                        <td>
-                                <input type = "radio" name="check2" id="n"/><br/></center>
-                        </td>   		
+                        <td>將自己的電腦連接同房的網孔後是否能連線: </td>
+                        <td><input type = "radio" name="check2" id="y"  /></td>
+                        <td><input type = "radio" name="check2" id="n"/><br/></center></td>
                 </form>
-		
 	</tr>
 </table></center>
 
