@@ -73,7 +73,7 @@
 						echo '<td>' . $tmp['bed'] . '</td>' .
 						     '<td>' . $tmp['ip'] . '</td>' .
 						     '<td>' . $tmp['subnetmask'] . '</td>' .
-						     '<td>' . $tmp['gateway'] . '</td>';
+						     '<td>' . $tmp['gateway'] . '</td>' .
 						     '<td class="lastcol">' . '140.117.11.1' . '</td>';
 					}
 				}
