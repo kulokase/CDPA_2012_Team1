@@ -160,8 +160,27 @@
 
 </div>
 
-<div style="color:snow; background:;filter : alpha(opacity=50); opacity : 0.5;">
 
+<?php
+
+function read(){
+
+        require ("mysql.php");
+        $sql = "SELECT * FROM  `GuestBook` ";
+        $sth = $dbh->query($sql);
+        $result = $sth->fetchAll();
+        foreach($result as $tmp){
+                echo htmlspecialchars($tmp['name']).'<br />';
+                echo htmlspecialchars($tmp['msg'])."<br />";
+        }
+
+}
+
+read ();
+
+echo " Hello World";
+                /* This is a comment */
+?>
 
 
 
