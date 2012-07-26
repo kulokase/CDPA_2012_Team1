@@ -18,9 +18,9 @@
 	<body style="background: url(IMG/index/k18.gif)" >
 		<center>
 		<br/>
-                <input name="submit" type=submit class="btn" value='報修點我' onclick="window.open('repair/p1.php');"/>
-        	<input name="submit" type=submit class="btn" value='進度查詢' onclick="window.open('search.php');"/>
-        	<input name="submit" type=submit class="btn" value='教學點我' onclick="window.open('teach.html');">
+                <input name="button" type=submit class="btn" value='報修點我' onclick="window.open('repair/p1.php');"/>
+        	<input name="button" type=submit class="btn" value='進度查詢' onclick="window.open('search.php');"/>
+        	<input name="button" type=submit class="btn" value='教學點我' onclick="window.open('teach.html');">
 		<br/><br/><br/>
 		<span style= "color:red"><font size = "5"><strong>流量Top100!!</strong></font></span>
 		<br/><br/>
