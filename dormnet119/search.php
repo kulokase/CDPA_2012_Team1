@@ -239,7 +239,7 @@ $("div#information").hide();
                                 			<input type="reset" value="清空" /></td>
 						</tr>
 			                </tfoot>
-       				 </table>
+       				</table>
 				</p>
 			</form>
 		</div>
