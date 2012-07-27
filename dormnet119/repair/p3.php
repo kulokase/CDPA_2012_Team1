@@ -7,13 +7,13 @@
 		</script>
                 <meta charset="utf-8"> 
                    
-                <style type="text/css">
+                <style type="text/css"  >
                 h3 {color:red;}
                 </style>
 
 		<title>報修表</title>
  	</head>
-        <body >
+        <body style="background:url( http://www.pptbz.com/pptpic/UploadFiles_6909/201105/2011052107150213.jpg  ) " >
                 <h1><big><center>報修表<center></big></h1>   
                 <hr/><hr/> 
                 <div style="color:blue ; ">   
