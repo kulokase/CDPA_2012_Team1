@@ -5,7 +5,7 @@
 	<head>
 		<meta charset = "utf-8">
 		<title>  網路卡卡號查詢  </title>
-
+		<link rel="stylesheet" type="text/css" href="teach.css">
 	</head>
 	<body>
 
