@@ -31,8 +31,7 @@
  				 outline: 0px;
 			}
 		<style/>
-		<br/><br/><br/><br/><br/><br/><br/><br/>
-
+		
 		<style type="text/css">
 			.button
 			{
@@ -52,12 +51,19 @@
 			}
 		</style>
 
+		<div class=out1 style='text-align:center; line-height:450px'><span>
+
 		<BUTTON class="yt-uix-button" onclick="self.location.href='p2.php'">填 報 修 單</BUTTON>
 		<BUTTON class="yt-uix-button" onclick="self.location.href='p4.php'">改 報 修 單</BUTTON>
-		<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+		</span>
+		</div>
+
+		<div class=out1 style='text-align:center; line-height:150px'><span>
+
 		<BUTTON style="WIDTH:60px ; HEIGHT:30px" onclick="self.location.href='../index.php'" >回首頁</BUTTON>
-		<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-		<BUTTON style="WIDTH:80px ; HEIGHT:40px ">回首頁</BUTTON>
+		</span>
+                </div>
+
         	<center/>
 	</body>
 </html>

@@ -21,7 +21,8 @@
                        			 	<td><label>報修編號:</label></td>
                        				<td colspan="2"><input type="text" name="bugid" /><br /></td>
              			   	</tr>
-       	       				<tr>	                      				<td><label>報修密碼:</label></td>
+       	       				<tr>
+                    				<td><label>報修密碼:</label></td>
                       			  	<td colspan="2"><input type="password" name="regpass" /><br /></td>
                 			</tr>
         	     			<tfoot>
@@ -38,6 +39,19 @@
 			</p>
 		</div>
 		<?php
+			print_r($_POST);
+
+			if(isset($_POST['bugid'])){
+				
+				echo "POST";
+				
+			}else{
+				echo "NOT POST";
+			}
+
+			$account = $_POST['bugid'];
+			$password = $_POST['regpass'];
+
 			require ("mysql.php");
 			if (!empty($_POST['bugid']) or !empty($_POST['regpass'])) {
 
@@ -49,8 +63,9 @@
 				$stm->execute(array(':user' => $user , ':pass'=>$pass));
 				$res = $stm->fetch();
 		
+
 				if ($res) {
-					echo "congratulation!!";
+				//	echo "congratulation!!";
 				}
 				else {
 					echo "Invalid login information.";
@@ -60,6 +75,7 @@
 				echo "Please input username and password!";
 			}
 		?>
+
 		<script type="text/javascript">
                 	$(document).ready(function(){
 				<?php 
@@ -73,7 +89,7 @@
 				<?php 
 					} 
 				?>
-				alert();
+			;
                	 	});
 		</script>
 		<hr>
@@ -185,8 +201,8 @@ $("div#information").hide();
                 				echo htmlspecialchars($tmp['log'])."<br />";
       					}
 				}
-				$id = "777";
-	                        $manager = "PichuBabyXDDDDDDDDDDDD";
+				//$id = "777";
+	                        //$manager = "PichuBabyXDDDDDDDDDDDD";
 				write_int($id, $manager, $_POST['log']);
 				read_int ();
 			?>
@@ -217,6 +233,18 @@ $("div#information").hide();
 			<form method="post">
 				<p align=center>
         			<table>
+                                        <tr>
+                                                <td><label>報修序號：</label></td>
+                                                <?php
+                                                        echo '<td><input name="bugid" type="text" value="'.$account.'" readonly="readonly"/><br /></td>';
+                                                ?>
+                                        </tr>
+                                        <tr>
+                                                <td><label>報修密碼：</label></td>
+                                                <?php
+                                                        echo '<td><input name="regpass" type="text" value="'.$password.'" readonly="readonly"/><br /></td>';
+                                                ?>
+                                        </tr>
                				<tr>
                	        			<td><label>報修編號：</label></td>
                         			<?php

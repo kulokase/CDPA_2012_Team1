@@ -35,7 +35,7 @@
 					<option value="L">翠亨L棟</option>			
 				</select>
 				</p>
-				<p>寢室房號：<input name="room" size="4" maxlength="3" />(Example：202、304)</p>
+				<p>寢室房號：<input name="room" size="4" maxlength="3" />(Example：201、101)</p>
 				<p>寢室床號：
 				<select name="bed">
 					<option value="1">1</option>
