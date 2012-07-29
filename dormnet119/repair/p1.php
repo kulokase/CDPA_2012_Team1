@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<meta charset = "utf8">
+		<meta charset = "utf-8">
 		<title> 報修單 </title>
 	</head>
 	<body>

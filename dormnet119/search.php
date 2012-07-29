@@ -2,7 +2,7 @@
 <html>
 
 	<head>
-		<meta charset="utf8">
+		<meta charset="utf-8">
 		<title>查詢維修進度</title>
 	</head>
 	<body>
@@ -42,9 +42,7 @@
 			print_r($_POST);
 
 			if(isset($_POST['bugid'])){
-				
 				echo "POST";
-				
 			}else{
 				echo "NOT POST";
 			}

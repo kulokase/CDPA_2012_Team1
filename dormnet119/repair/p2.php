@@ -1,6 +1,6 @@
 <html>
 	<head>
-        	 <meta charset = "utf8"> 
+        	 <meta charset = "utf-8"> 
         	 <title> 前置檢查 </title>
      	 	 <style type="text/css">
       		 	h2 {color:red;}
